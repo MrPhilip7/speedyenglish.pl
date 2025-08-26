@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speedy English - Nowoczesna szkoła języka angielskiego</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Speedy English - profesjonalna szkoła języka angielskiego. Indywidualne i grupowe lekcje, kursy online, przygotowanie do egzaminów. Nauka angielskiego w przyjaznej atmosferze.">
+    <meta name="keywords" content="angielski, szkoła językowa, lekcje angielskiego, kursy angielskiego, nauka angielskiego">
+    
+    <!-- Schema.org markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "LanguageSchool",
+        "name": "Speedy English",
+        "url": "https://speedyenglish.pl",
+        "description": "Profesjonalna szkoła języka angielskiego"
+    }
+    </script>
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon-32x32.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary-blue: #1e3a8a;
+            --secondary-blue: #3b82f6;
+            --accent-red: #dc2626;
+            --light-red: #fef2f2;
+            --white: #ffffff;
+            --light-gray: #f8fafc;
+            --dark-gray: #1e293b;
+            --text-primary: #0f172a;
+            --text-secondary: #64748b;
+            --border-radius: 12px;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--white);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-bottom: 2px solid var(--primary-blue);
+        }
+
+        .navbar-brand {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-blue) !important;
+        }
+
+        .navbar-nav .nav-link {
+            font-weight: 500;
+            color: var(--text-primary) !important;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem 1rem !important;
+        }
+
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+            color: var(--accent-red) !important;
+        }
+
+        .navbar-nav .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 3px;
+            background: var(--accent-red);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .navbar-nav .nav-link:hover::after,
+        .navbar-nav .nav-link.active::after {
+            width: 80%;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            padding: 120px 0 80px;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            color: var(--white);
+            position: relative;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            font-weight: 400;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero-image {
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-lg);
+            transition: transform 0.3s ease;
+            max-width: 450px;
+            width: 100%;
+        }
+
+        .hero-image:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--text-primary);
+        }
+
+        /* Cards */
+        .service-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            overflow: hidden;
+            height: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent-red);
+        }
+
+        .service-card .card-body {
+            padding: 1.5rem;
+        }
+
+        .service-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: contain;
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+            padding: 10px;
+            background: var(--light-gray);
+        }
+
+        .service-card h4 {
+            font-weight: 600;
+            margin: 1rem 0 0.5rem;
+            color: var(--text-primary);
+            font-size: 1.2rem;
+        }
+
+        .service-card p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .service-card .btn {
+            background: none;
+            border: none;
+            color: var(--primary-blue);
+            font-weight: 600;
+            padding: 0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .service-card .btn:hover {
+            color: var(--accent-red);
+        }
+
+        /* Video Section */
+        .video-section {
+            background: var(--light-gray);
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            aspect-ratio: 16/9;
+        }
+
+        .video-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* YouTube Section */
+        .youtube-section {
+            background: linear-gradient(135deg, var(--accent-red) 0%, #ef4444 100%);
+            color: var(--white);
+        }
+
+        .youtube-title {
+            color: var(--white);
+            margin-bottom: 2rem;
+        }
+
+        .youtube-title img {
+            width: 50px;
+            height: 50px;
+            margin-right: 1rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--light-red);
+            color: var(--text-primary);
+        }
+
+        .cta-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 3rem;
+            text-align: center;
+            box-shadow: var(--shadow-lg);
+            border: 2px solid var(--accent-red);
+        }
+
+        .cta-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-blue);
+        }
+
+        .cta-btn {
+            background: var(--accent-red);
+            color: var(--white);
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+
+        .cta-btn:hover {
+            background: #b91c1c;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark-gray);
+            color: var(--white);
+            padding: 3rem 0 1rem;
+        }
+
+        .footer h5 {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--secondary-blue);
+        }
+
+        .footer a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: var(--accent-red);
+        }
+
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: rgba(59, 130, 246, 0.2);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            margin-right: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--accent-red);
+            transform: translateY(-2px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .hero-section {
+                padding: 100px 0 60px;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            .service-card img {
+                height: 160px;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        /* Loading optimization */
+        .lazy-load {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .lazy-load.loaded {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="/">
+                <img src="assets/img/autobusik_256x256.png" width="40" height="40" alt="Speedy English Logo" class="me-2">
+                <span>Speedy English</span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Strona główna</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="lekcje.html">Lekcje</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="lektorzy.html">Lektorzy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="onas.html">O nas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="odjazdowki.html">Odjazdówki</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://blog.speedyenglish.pl/" target="_blank">Blog <i class="fas fa-external-link-alt" style="font-size: 0.8em; margin-left: 4px;"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="inne.html">Speedy School</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="kontakt.html">Kontakt</a>
+                    </li>
+                </ul>
+                
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.facebook.com/speedyenglish123" target="_blank">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.instagram.com/speedy__english" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.youtube.com/@speedyenglish9640" target="_blank">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 hero-content">
+                    <h1 class="hero-title fade-in-up">Cześć i czołem!</h1>
+                    <p class="hero-subtitle fade-in-up">
+                        Z tej strony typowo nietypowa trenerka językowa. Jestem tutaj żeby zainspirować Cię do nauki języka angielskiego i towarzyszyć Ci we wspólnej przygodzie jaką jest proces jego opanowania. Zapakuj w plecak dobre nastawienie, a ja zajmę się resztą!
+                    </p>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="assets/img/startowe.jpg" alt="Speedy English" class="hero-image fade-in-up">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="section video-section">
+        <div class="container">
+            <div class="video-container fade-in-up">
+                <iframe src="https://www.youtube.com/embed/6FaAXmrkgxo?si=FCQQru1epAHVXerZ" 
+                        allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title fade-in-up">Nasze Lekcje</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card fade-in-up">
+                        <img src="assets/img/autobus.png" alt="Lekcje indywidualne" class="lazy-load">
+                        <div class="card-body">
+                            <h4>Indywidualne</h4>
+                            <p>Wykorzystaj w pełni swój potencjał!</p>
+                            <a href="lekcje.html" class="btn">
+                                Zobacz więcej <i class="fas fa-arrow-right ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card fade-in-up">
+                        <img src="assets/img/iza_grupowe.png" alt="Lekcje grupowe" class="lazy-load">
+                        <div class="card-body">
+                            <h4>Grupowe</h4>
+                            <p>Nauka przez interakcję z innymi osobami!</p>
+                            <a href="lekcje.html" class="btn">
+                                Zobacz więcej <i class="fas fa-arrow-right ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card fade-in-up">
+                        <img src="assets/img/iza_006a.png" alt="Lekcje dla firm" class="lazy-load">
+                        <div class="card-body">
+                            <h4>Dla firm</h4>
+                            <p>Angielski związany z Twoją pracą!</p>
+                            <a href="lekcje.html" class="btn">
+                                Zobacz więcej <i class="fas fa-arrow-right ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card fade-in-up">
+                        <img src="assets/img/iza_holiday.png" alt="Kursy wakacyjne" class="lazy-load">
+                        <div class="card-body">
+                            <h4>Kursy wakacyjne</h4>
+                            <p>Wrzuć na luz razem z nami!</p>
+                            <a href="lekcje.html" class="btn">
+                                Zobacz więcej <i class="fas fa-arrow-right ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card fade-in-up">
+                        <img src="assets/img/iza_dodatkowe_1a.png" alt="Lekcje online" class="lazy-load">
+                        <div class="card-body">
+                            <h4>Online</h4>
+                            <p>Pełna wygoda!</p>
+                            <a href="lekcje.html" class="btn">
+                                Zobacz więcej <i class="fas fa-arrow-right ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card fade-in-up">
+                        <img src="assets/img/iza_004.png" alt="Lekcje tematyczne" class="lazy-load">
+                        <div class="card-body">
+                            <h4>Tematyczne</h4>
+                            <p>Angielski taki jaki lubisz!</p>
+                            <a href="lekcje.html" class="btn">
+                                Zobacz więcej <i class="fas fa-arrow-right ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card fade-in-up">
+                        <img src="assets/img/izarower.png" alt="Język polski dla obcokrajowców" class="lazy-load">
+                        <div class="card-body">
+                            <h4>Język polski dla obcokrajowców</h4>
+                            <p>Odkryj piękno języka polskiego!</p>
+                            <a href="lekcje.html" class="btn">
+                                Zobacz więcej <i class="fas fa-arrow-right ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card fade-in-up">
+                        <img src="assets/img/i03.png" alt="Kurs przygotowujący do egzaminu" class="lazy-load">
+                        <div class="card-body">
+                            <h4>Kurs przygotowujący do egzaminu</h4>
+                            <p>Z nami egzamin to pestka!</p>
+                            <a href="lekcje.html" class="btn">
+                                Zobacz więcej <i class="fas fa-arrow-right ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card fade-in-up">
+                        <img src="assets/img/iza_pielegniarka_01.png" alt="Angielski w medycynie" class="lazy-load">
+                        <div class="card-body">
+                            <h4>Angielski w medycynie</h4>
+                            <p>Wszystko w pigułce!</p>
+                            <a href="lekcje.html" class="btn">
+                                Zobacz więcej <i class="fas fa-arrow-right ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- YouTube Section -->
+    <section class="section youtube-section">
+        <div class="container">
+            <h2 class="section-title youtube-title fade-in-up">
+                <img src="assets/img/brands/youtube.svg" alt="YouTube">
+                YouTube
+            </h2>
+            <div class="video-container fade-in-up">
+                <iframe src="https://www.youtube.com/embed/1jzRZqVmsSo?si=EcSdunoaUnmHty4F" 
+                        allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-section">
+        <div class="container">
+            <div class="cta-card fade-in-up">
+                <h3 class="cta-title">Masz jakieś pytania?</h3>
+                <p class="mb-4">Skontaktuj się ze mną!</p>
+                <a href="kontakt.html" class="cta-btn">Kontakt</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5>Speedy English</h5>
+                    <p>Profesjonalna szkoła języka angielskiego, która pomoże Ci osiągnąć Twoje cele językowe.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/speedyenglish123" target="_blank">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/speedy__english" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@speedyenglish9640" target="_blank">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Nauka</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="lekcje.html">Lekcje</a></li>
+                        <li><a href="lektorzy.html">Lektorzy</a></li>
+                        <li><a href="odjazdowki.html">Odjazdówki</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>O nas</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="onas.html">O nas</a></li>
+                        <li><a href="inne.html">Speedy School</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Kontakt</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="kontakt.html">Kontakt</a></li>
+                        <li><a href="https://speedyenglish.pl">speedyenglish.pl</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <hr class="my-4" style="border-color: rgba(255,255,255,0.2);">
+            
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2025 Speedy English. Wszystkie prawa zastrzeżone.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/speedyenglish123" target="_blank">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/speedy__english" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@speedyenglish9640" target="_blank">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script>
+        // Lazy loading for images
+        document.addEventListener('DOMContentLoaded', function() {
+            const lazyImages = document.querySelectorAll('.lazy-load');
+            
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.classList.add('loaded');
+                        observer.unobserve(img);
+                    }
+                });
+            });
+            
+            lazyImages.forEach(img => imageObserver.observe(img));
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.boxShadow = '0 4px 15px rgba(0,0,0,0.15)';
+            } else {
+                navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            }
+        });
+
+        // Add animation classes on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-up');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-up').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
