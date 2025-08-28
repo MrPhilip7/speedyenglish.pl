@@ -1,534 +1,168 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html data-bs-theme="light" lang="pl">
+
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lektorzy - Speedy English</title>
-    
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Speedy English - poznaj naszych doświadczonych lektorów języka angielskiego. Profesjonalni nauczyciele z pasją do nauczania.">
-    <meta name="keywords" content="lektorzy angielskiego, nauczyciele angielskiego, szkoła językowa, lekcje angielskiego">
-    
-    <!-- Favicons -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Lekcje</title>
     <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon-32x32.png">
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Custom CSS -->
-    <style>
-        :root {
-            --primary-blue: #1e3a8a;
-            --secondary-blue: #3b82f6;
-            --accent-red: #dc2626;
-            --light-red: #fef2f2;
-            --white: #ffffff;
-            --light-gray: #f8fafc;
-            --dark-gray: #1e293b;
-            --text-primary: #0f172a;
-            --text-secondary: #64748b;
-            --border-radius: 12px;
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Open Sans', sans-serif;
-            line-height: 1.6;
-            color: var(--text-primary);
-            background-color: var(--white);
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-        }
-
-        /* Navigation */
-        .navbar {
-            background: var(--white);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            border-bottom: 2px solid var(--primary-blue);
-        }
-
-        .navbar-brand {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 1.5rem;
-            color: var(--primary-blue) !important;
-        }
-
-        .navbar-nav .nav-link {
-            font-weight: 500;
-            color: var(--text-primary) !important;
-            transition: all 0.3s ease;
-            position: relative;
-            padding: 0.5rem 1rem !important;
-        }
-
-        .navbar-nav .nav-link:hover,
-        .navbar-nav .nav-link.active {
-            color: var(--accent-red) !important;
-        }
-
-        .navbar-nav .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            width: 0;
-            height: 3px;
-            background: var(--accent-red);
-            transition: all 0.3s ease;
-            transform: translateX(-50%);
-        }
-
-        .navbar-nav .nav-link:hover::after,
-        .navbar-nav .nav-link.active::after {
-            width: 80%;
-        }
-
-        /* Hero Section */
-        .hero-section {
-            padding: 120px 0 60px;
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
-            color: var(--white);
-            position: relative;
-        }
-
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-            opacity: 0.3;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero-title {
-            font-size: 3.5rem;
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-        }
-
-        /* Section Styling */
-        .section {
-            padding: 80px 0;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 3rem;
-            color: var(--text-primary);
-        }
-
-        /* Teacher Cards */
-        .teacher-card {
-            background: var(--white);
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-            overflow: hidden;
-            margin-bottom: 2rem;
-        }
-
-        .teacher-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--accent-red);
-        }
-
-        .teacher-card .card-body {
-            padding: 2rem;
-        }
-
-        .teacher-card img {
-            width: 200px;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 50%;
-            margin: 0 auto 1.5rem;
-            display: block;
-            border: 4px solid var(--light-gray);
-        }
-
-        .teacher-card h4 {
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-            font-size: 1.5rem;
-            text-align: center;
-        }
-
-        .teacher-card p {
-            color: var(--text-secondary);
-            margin-bottom: 0;
-            font-size: 1rem;
-            line-height: 1.7;
-        }
-
-        .teacher-divider {
-            border: none;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--accent-red), transparent);
-            margin: 2rem 0;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero-title {
-                font-size: 2.5rem;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
-            
-            .hero-section {
-                padding: 100px 0 60px;
-            }
-            
-            .section {
-                padding: 60px 0;
-            }
-            
-            .teacher-card img {
-                width: 150px;
-                height: 150px;
-            }
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .fade-in-up {
-            animation: fadeInUp 0.6s ease-out;
-        }
-
-        /* Footer */
-        .footer {
-            background: var(--dark-gray);
-            color: var(--white);
-            padding: 3rem 0 1rem;
-        }
-
-        .footer h5 {
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: var(--secondary-blue);
-        }
-
-        .footer a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer a:hover {
-            color: var(--accent-red);
-        }
-
-        .social-links a {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            background: rgba(59, 130, 246, 0.2);
-            border-radius: 50%;
-            text-align: center;
-            line-height: 40px;
-            margin-right: 0.5rem;
-            transition: all 0.3s ease;
-        }
-
-        .social-links a:hover {
-            background: var(--accent-red);
-            transform: translateY(-2px);
-        }
-    </style>
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon-32x32.png" media="(prefers-color-scheme: dark)">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&amp;display=swap">
+    <link rel="stylesheet" href="assets/css/Font%20Awesome%205%20Brands.css">
+    <link rel="stylesheet" href="assets/css/Font%20Awesome%205%20Free.css">
+    <link rel="stylesheet" href="assets/css/Contact-Details-icons.css">
+    <link rel="stylesheet" href="assets/css/divider-text-middle.css">
+    <link rel="stylesheet" href="assets/css/Latest-Blog.css">
+    <link rel="stylesheet" href="assets/css/Responsive-Youtube-Embed-1.css">
+    <link rel="stylesheet" href="assets/css/Responsive-Youtube-Embed.css">
+    <link rel="stylesheet" href="assets/css/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/Banner-Heading-Image-images.css">
 </head>
 
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="/">
-                <img src="assets/img/autobusik_256x256.png" width="40" height="40" alt="Speedy English Logo" class="me-2">
-                <span>Speedy English</span>
-            </a>
-            
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            
-            <div class="collapse navbar-collapse" id="navbarNav">
+    <nav class="navbar navbar-expand-md fixed-top navbar-shrink py-3 navbar-light" id="mainNav">
+        <div class="container"><a class="navbar-brand d-flex align-items-center" href="/"><span><img src="assets/img/autobusik_256x256.png" width="50" height="50"></span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1" style="font-size: 15px;">
                 <ul class="navbar-nav mx-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Strona główna</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="lekcje.html">Lekcje</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="lektorzy.html">Lektorzy</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="onas.html">O nas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="odjazdowki.html">Odjazdówki</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://blog.speedyenglish.pl/" target="_blank">Blog <i class="fas fa-external-link-alt" style="font-size: 0.8em; margin-left: 4px;"></i></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="inne.html">Speedy School</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="kontakt.html">Kontakt</a>
-                    </li>
-                </ul>
-                
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://www.facebook.com/speedyenglish123" target="_blank">
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://www.instagram.com/speedy__english" target="_blank">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://www.youtube.com/@speedyenglish9640" target="_blank">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                    </li>
-                </ul>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Strona główna</a></li>
+                    <li class="nav-item"><a class="nav-link" href="lekcje.html">Lekcje</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="lektorzy.html">Lektorzy</a></li>
+                    <li class="nav-item"><a class="nav-link" href="onas.html">O nas</a></li>
+                    <li class="nav-item"></li>
+                    <li class="nav-item"><a class="nav-link nav-link" href="odjazdowki.html">Odjazdówki</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="inne.html">Speedy School</a></li>
+                    <li class="nav-item"><a class="nav-link" href="kontakt.html">Kontakt</a></li>
+                </ul><ul class="list-inline mb-0">
+    <li class="list-inline-item list-inline-item list-inline-item list-inline-item"><a href="https://www.facebook.com/speedyenglish123"><svg class="bi bi-facebook" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"></path>
+            </svg></a></li>
+    <li class="list-inline-item list-inline-item list-inline-item list-inline-item"><a href="https://www.instagram.com/speedy__english"><svg class="bi bi-instagram" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"></path>
+            </svg></a></li>
+    <li class="list-inline-item list-inline-item list-inline-item list-inline-item"><a href="https://www.youtube.com/@speedyenglish9640"><svg class="bi bi-youtube" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"></path>
+            </svg></a></li>
+</ul>
             </div>
         </div>
     </nav>
-
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="container">
-            <div class="hero-content text-center">
-                <h1 class="hero-title fade-in-up">Nasi Lektorzy</h1>
-                <p class="hero-subtitle fade-in-up">Poznaj doświadczonych nauczycieli z pasją do nauczania języka angielskiego</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Teachers Section -->
-    <section class="section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-10 mx-auto">
-                    <!-- Iza -->
-                    <div class="teacher-card fade-in-up">
-                        <div class="card-body">
-                            <img src="assets/img/iza-circle.jpg" alt="Iza - Lektor">
-                            <h4>Iza</h4>
-                            <p>Cześć i czołem! Wielbicielka podróży, koneserka muzyki, pasjonatka sportu i miłośniczka języka angielskiego. Rób to co kochasz, a nigdy nie będziesz musiał pracować! – w swoim życiu zawsze kierowałam się tą zasadą. I oto jestem – trenerka języka angielskiego. Można powiedzieć, że do tej roli przygotowywałam się całe życie. Moją ulubioną zabawą w dzieciństwie oprócz wspinania się po drzewach czy kopania piłki była właśnie zabawa w nauczyciela. Już wtedy chciałam być jak John Keating w Stowarzyszeniu Umarłych Poetów, albo jak Miyagi w Karate Kid. Stać się nauczycielem z pasją, który inspiruje, uczy swobodnego myślenia, motywuje uczniów do działania i pomaga im odkryć talenty. Bardzo szybko, bo w wieku 16 lat zaczęłam udzielać pierwszych lekcji. W 2013 roku zdałam maturę i choć pomysłów było wiele, wybrałam studia lingwistyczne o specjalności język angielski z rosyjskim. Na studiach pracowałam w szkołach językowych, zbierając doświadczenie i kształcąc swoje umiejętności w zakresie nauczania języka angielskiego. Podczas wakacji będąc animatorem czasu wolnego, doskonaliłam swoją kreatywność, odpowiedzialność i prace z grupą. W 2019 roku rozpoczęłam pracę w szkole średniej. Praca z młodzieżą pozwoliła mi na rozwój w dziedzinie psychologi, dydaktyki i pedagogiki, ale przede wszystkim mogłam się wiele nauczyć od moich uczniów. Jak śpiewał Phil Collins: „In learning you will teach, and in teaching you will learn", dlatego dzięki tej pracy ja nieustannie się uczę, łącze pasje, jestem inspirowana i inspiruję.</p>
+    <section></section>
+    <section class="py-5">
+        <div class="container py-4 py-xl-5" style="width: auto;max-width: auto;">
+            <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-lg-3">
+                <div class="col-xl-12" style="width: auto;max-width: 100%;">
+                    <div class="card border-light border-1 d-flex justify-content-center p-4" style="width: auto;max-width: 100%;">
+                        <h1 class="display-4 fw-bold mb-5" style="text-align: center;margin-top: 0px;">Lektorzy</h1>
+                        <div class="row gy-4 gy-md-0">
+                            <div class="col-md-6 col-xl-5 text-center text-md-start d-flex d-sm-flex d-md-flex justify-content-center align-items-center justify-content-md-start align-items-md-center justify-content-xl-center">
+                                <div style="max-width: 350px;"></div>
+                            </div>
                         </div>
-                    </div>
-
-                    <hr class="teacher-divider">
-
-                    <!-- Masza -->
-                    <div class="teacher-card fade-in-up">
-                        <div class="card-body">
-                            <img src="assets/img/people/masha-photoaidcom-cropped.png" alt="Masza - Lektor">
-                            <h4>Masza</h4>
-                            <p>Cześć, jestem Masza! Trenerka języka angielskiego w Speedy English. Mam wiele pasji takich jak taniec, pływanie, rysowanie, muzyka, pisanie, tworzenie grafik. Z czasem odkryłam, że mam również dużą zdolność do nauki języków i uczenia innych. Na ten moment biegle posługuję się 4 językami: rosyjski, białoruski, polski i angielski. I nie namierzam na tym kończyć. Podczas pracy w Speedy English poznałam niesamowitych i wyjątkowych ludzi. Każdy z nich ma inne doświadczenia, przeżycia i potrzeby, a ja mam przyjemność z nimi współpracować i towarzyszyć w ich rozwoju. Jestem nauczycielem, a to znaczy, że mogę pomagać ludziom uwierzyć w ich marzenia i je zrealizować. Jeżeli jesteś gotowy na wspólną przygodę jakim jest nauka języka to czekam na Ciebie. See you!</p>
+                        <div class="card-body" style="width: auto;"><img class="center" src="assets/img/iza-circle.jpg" width="200" height="192">
+                            <div>
+                                <h4 class="fw-bold" style="text-align: center;"><br><strong>Iza</strong></h4>
+                                <p class="text-muted">Cześć i czołem!<br>Wielbicielka podróży, koneserka muzyki, pasjonatka sportu i miłośniczka języka angielskiego. Rób to co kochasz, a nigdy nie będziesz musiał pracować! – w swoim życiu zawsze kierowałam się tą zasadą. I oto jestem – trenerka języka angielskiego. Można powiedzieć, że do tej roli przygotowywałam się całe życie. Moją ulubioną zabawą w dzieciństwie oprócz wspinania się po drzewach czy kopania piłki była właśnie zabawa w nauczyciela. Już wtedy chciałam być jak John Keating w Stowarzyszeniu Umarłych Poetów, albo jak Miyagi w Karate Kid. Stać się nauczycielem z pasją, który inspiruje, uczy swobodnego myślenia, motywuje uczniów do działania i pomaga im odkryć talenty. Bardzo szybko, bo w wieku 16 lat zaczęłam udzielać pierwszych lekcji. W 2013 roku zdałam maturę i choć pomysłów było wiele, wybrałam studia lingwistyczne o specjalności język angielski z rosyjskim. Na studiach pracowałam w szkołach językowych, zbierając doświadczenie i kształcąc swoje umiejętności w zakresie nauczania języka angielskiego. Podczas wakacji będąc animatorem czasu wolnego, doskonaliłam swoją kreatywność, odpowiedzialność i prace z grupą. W 2019 roku rozpoczęłam pracę w szkole średniej. Praca z młodzieżą pozwoliła mi na rozwój w dziedzinie psychologi, dydaktyki i pedagogiki, ale przede wszystkim mogłam się wiele nauczyć od moich uczniów. Jak śpiewał Phil Collins: „In learning you will teach, and in teaching you will learn”, dlatego dzięki tej pracy ja nieustannie się uczę, łącze pasje, jestem inspirowana i inspiruję.<br><br></p>
+                            </div>
+                            <hr>
                         </div>
-                    </div>
-
-                    <hr class="teacher-divider">
-
-                    <!-- Sola -->
-                    <div class="teacher-card fade-in-up">
-                        <div class="card-body">
-                            <img src="assets/img/people/sola-photoaidcom-cropped.png" alt="Sola - Lektor">
-                            <h4>Sola</h4>
-                            <p>My name is Oyinkansola, and I am from Nigeria. I am a nursing student and I am currently in my third year. I had my first degree in Behavioural Psychology and I have participated in various Non Governmental Organisations for raising the awareness of mental health issues in children. I consider myself an introvert, but I enjoy spending my free time with my close friends. I love to cook, I love music and art and I also enjoy nature viewing. I have always felt that my earthly purpose is to support, inspire and help others. Teaching equips me with the opportunity to stimulate and empower young minds giving them the a potential to expand their knowledge, skills and confidence. So, with great pleasure I invite you to join me for a lesson.</p>
+                        <div class="card-body" style="width: auto;"><img class="center" src="assets/img/people/masha-photoaidcom-cropped.png" width="200" height="192">
+                            <div>
+                                <h4 class="fw-bold" style="text-align: center;"><br><strong>Masza</strong></h4>
+                                <p class="text-muted"><br><span style="color: var(--bs-secondary-color);">Cześć, jestem Masza! Trenerka języka angielskiego w Speedy English. Mam wiele pasji takich jak taniec, pływanie, rysowanie, muzyka, pisanie, tworzenie grafik. Z czasem odkryłam, że mam również dużą zdolność do nauki języków i uczenia innych. Na ten moment biegle posługuję się 4 językami: rosyjski, białoruski, polski i angielski. I nie namierzam na tym kończyć. Podczas pracy w Speedy English poznałam niesamowitych i wyjątkowych ludzi. Każdy z nich ma inne doświadczenia, przeżycia i potrzeby, a ja mam przyjemność z nimi współpracować i towarzyszyć w ich rozwoju. Jestem nauczycielem, a to znaczy, że mogę pomagać ludziom uwierzyć w ich marzenia i je zrealizować. Jeżeli jesteś gotowy na wspólną przygodę jakim jest nauka języka to czekam na Ciebie. See you!&nbsp;</span><br><br><br></p>
+                            </div>
+                            <hr>
                         </div>
-                    </div>
-
-                    <hr class="teacher-divider">
-
-                    <!-- Patryk -->
-                    <div class="teacher-card fade-in-up">
-                        <div class="card-body">
-                            <img src="assets/img/patryk.png" alt="Patryk - Lektor">
-                            <h4>Patryk</h4>
-                            <p>Cześć, jestem Patryk! poznawanie języków i innych kultur pasjonuje mnie od kiedy pamiętam. Już jako dziecko zrozumiałem ze nowy język to nowe znajomości i nowe możliwości. Po szkole średniej wyjechałem do Anglii gdzie studiowałem Filologie Hiszpańska, a swoje umiejętności nauczania szlifowałem na Bali, gdzie zdobyłem certyfikat nauczania angielskiego. Lekcje prowadzę na luzie i z uśmiechem - zapraszam!</p>
+                        <div class="card-body" style="width: auto;"><img class="center" src="assets/img/people/sola-photoaidcom-cropped.png" width="200" height="192">
+                            <div>
+                                <h4 class="fw-bold" style="text-align: center;"><br><strong>Sola</strong></h4>
+                                <p class="text-muted"><br>My name is Oyinkansola, and I am from Nigeria. I am a nursing student and I am currently in my third year. I had my first degree in Behavioural Psychology and I have participated in various Non Governmental Organisations for raising the awareness of mental health issues in children.<br>I consider myself an introvert, but I enjoy spending my free time with my close friends. I love to cook, I love music and art and I also enjoy nature viewing.<br>I have always felt that my earthly purpose is to support, inspire and help others. Teaching equips me with the opportunity to stimulate and empower young minds giving them the a potential to expand their knowledge, skills and confidence.<br>So, with great pleasure I invite you to join me for a lesson.<br><br></p>
+                            </div>
+                            <hr>
                         </div>
-                    </div>
-
-                    <hr class="teacher-divider">
-
-                    <!-- Ksenia -->
-                    <div class="teacher-card fade-in-up">
-                        <div class="card-body">
-                            <img src="assets/img/people/06d61ba4-d3e3-4baf-a25b-b660942164e8-photoaidcom-cropped.png" alt="Ksenia - Lektor">
-                            <h4>Ksenia</h4>
-                            <p>Hej, jestem Ksenia! Twój pomocnik w nauce języków obcych. Uwielbiam aktywnie spędzać czas! Kocham sport, podróże i ludzi! Posługuję się 5 językami: angielski, polski, rosyjski, niemiecki i białoruski. Chętnie podzielę się z Wami swoją wiedzą w sposób łatwy i przyjemny! Jestem studentką lingwistyki angielsko-niemieckiej i każdego dnia uczę się uczyć i nauczać! To świetna przygoda! Zapraszam wszystkich chętnych do wspólnej nauki!</p>
+                        <div class="card-body" style="width: auto;"><img class="center" src="assets/img/patryk.png" width="200" height="192">
+                            <div>
+                                <h4 class="fw-bold" style="text-align: center;"><br><strong>Patryk</strong></h4>
+                                <p class="text-muted"><br>Cześć, jestem Patryk! poznawanie języków i innych kultur pasjonuje mnie od kiedy pamiętam. Już jako dziecko zrozumiałem ze nowy język to nowe znajomości i nowe możliwości. Po szkole średniej wyjechałem do Anglii gdzie studiowałem Filologie Hiszpańska, a swoje umiejętności nauczania szlifowałem na Bali, gdzie zdobyłem certyfikat nauczania angielskiego. Lekcje prowadzę na luzie i z uśmiechem - zapraszam!<br><br></p>
+                            </div>
+                            <hr>
                         </div>
-                    </div>
-
-                    <hr class="teacher-divider">
-
-                    <!-- Oliwia -->
-                    <div class="teacher-card fade-in-up">
-                        <div class="card-body">
-                            <img src="assets/img/people/oliwia1-photoaidcom-cropped.png" alt="Oliwia - Lektor">
-                            <h4>Oliwia</h4>
-                            <p>Hej! Jestem Oliwia i jestem studentką filologii angielskiej. Uwielbiam podróże, muzykę i poznawanie nowych kultur. Moja pasja do języków obcych rozpoczęła się już w dzieciństwie, a teraz mam przyjemność dzielić się tą pasją z innymi. Wierzę, że nauka języka to nie tylko gramatyka i słownictwo, ale przede wszystkim otwieranie się na świat i nowe możliwości. Każda lekcja to dla mnie nowa przygoda i szansa na poznanie wspaniałych ludzi. Dołącz do mnie w tej fascynującej podróży po świecie języka angielskiego!</p>
+                        <div class="card-body" style="width: auto;"><img class="center" src="assets/img/people/06d61ba4-d3e3-4baf-a25b-b660942164e8-photoaidcom-cropped.png" width="200" height="192">
+                            <div>
+                                <h4 class="fw-bold" style="text-align: center;"><br><strong>Ksenia</strong></h4>
+                                <p class="text-muted"><br>Hej, jestem Ksenia! Twój pomocnik w nauce języków obcych. Uwielbiam aktywnie spędzać czas! Kocham sport, podróże i ludzi! Posługuję się 5 językami: angielski, polski, rosyjski, niemiecki i białoruski. Chętnie podzielę się z Wami swoją wiedzą w sposób łatwy i przyjemny! Jestem studentką lingwistyki angielsko-niemieckiej i każdego dnia uczę się uczyć i nauczać! To świetna przygoda! Zapraszam wszystkich chętnych do wspólnej nauki!<br><br></p>
+                            </div>
+                            <hr>
                         </div>
+                        <div class="card-body" style="width: auto;"><img class="center" src="assets/img/people/oliwia1-photoaidcom-cropped.png" width="200" height="192">
+                            <div>
+                                <h4 class="fw-bold" style="text-align: center;"><br><strong>Oliwia</strong></h4>
+                                <p class="text-muted"><br>Cześć, jestem Oliwia! Języka angielskiego uczę się już od wielu lat, jednak od niedawna zrozumiałam jakie metody wpłynęły na mój progres i teraz pragnę się tym podzielić jako trenerka języka angielskiego. Oprócz tego jestem studentką Kognitywistyki i interesuję się filmoznawstwem. Ćwiczę również jogę i uczestniczę w biegach, z różnym skutkiem i choć nie zawsze wynik spełnia moje oczekiwania, ponieważ sprawia mi to radość nie pozwalam żeby mnie to zniechęciło i tą zasadą ogólnie kieruję się w życiu. Na moich lekcjach będę stawiać na sympatyczną atmosferę, która pomoże opanować angielski w przyjemny sposób i zachować dobre nastawienie, ponieważ wierzę, że jest to klucz do skutecznej nauki, jeżeli masz podobne zdanie to czekam na Ciebie!<br><br></p>
+                            </div>
+                        </div>
+                        <hr style="margin-top: 0px;">
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 mb-4">
-                    <h5>Speedy English</h5>
-                    <p>Profesjonalna szkoła języka angielskiego, która pomoże Ci osiągnąć Twoje cele językowe.</p>
-                    <div class="social-links">
-                        <a href="https://www.facebook.com/speedyenglish123" target="_blank">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="https://www.instagram.com/speedy__english" target="_blank">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://www.youtube.com/@speedyenglish9640" target="_blank">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="col-lg-2 col-md-6 mb-4">
-                    <h5>Nauka</h5>
+    <footer>
+        <div class="container py-4 py-lg-5">
+            <div class="row row-cols-2 row-cols-md-4">
+                <div class="col-sm-4 col-md-3 col-lg-3 col-xl-3 text-lg-start d-flex flex-column" style="border-width: 0px;">
                     <ul class="list-unstyled">
-                        <li><a href="lekcje.html">Lekcje</a></li>
-                        <li><a href="lektorzy.html">Lektorzy</a></li>
-                        <li><a href="odjazdowki.html">Odjazdówki</a></li>
+                        <li style="text-align: right;"><a href="index.html" style="font-weight: bold;">speedyenglish.pl</a></li>
+                        <li></li>
                     </ul>
                 </div>
-                
-                <div class="col-lg-2 col-md-6 mb-4">
-                    <h5>O nas</h5>
+                <div class="col-sm-4 col-md-3 col-lg-2 col-xl-2 text-lg-start d-flex flex-column">
                     <ul class="list-unstyled">
-                        <li><a href="onas.html">O nas</a></li>
-                        <li><a href="inne.html">Speedy School</a></li>
-                        <li><a href="https://blog.speedyenglish.pl/" target="_blank">Blog <i class="fas fa-external-link-alt" style="font-size: 0.8em; margin-left: 4px;"></i></a></li>
+                        <li style="text-align: right;"><a href="inne.html" style="font-weight: bold;text-align: left;">Lekcje</a></li>
+                        <li></li>
                     </ul>
                 </div>
-                
-                <div class="col-lg-2 col-md-6 mb-4">
-                    <h5>Kontakt</h5>
+                <div class="col-sm-4 col-md-3 col-lg-2 col-xl-2 text-lg-start d-flex flex-column">
                     <ul class="list-unstyled">
-                        <li><a href="kontakt.html">Kontakt</a></li>
-                        <li><a href="https://speedyenglish.pl">speedyenglish.pl</a></li>
+                        <li style="text-align: right;"><a href="onas.html" style="font-weight: bold;">O nas</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-4 col-md-3 col-lg-2 text-lg-start d-flex flex-column">
+                    <ul class="list-unstyled">
+                        <li style="text-align: right;"><a href="blog-old.html" style="font-weight: bold;">Blog</a></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <div class="col-sm-4 col-md-3 col-lg-2 text-lg-start d-flex flex-column">
+                    <ul class="list-unstyled">
+                        <li style="text-align: right;"><a href="kontakt.html" style="font-weight: bold;">Kontakt</a></li>
+                        <li></li>
+                        <li></li>
                     </ul>
                 </div>
             </div>
-            
-            <hr class="my-4" style="border-color: rgba(255,255,255,0.2);">
-            
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <p class="mb-0">&copy; 2025 Speedy English. Wszystkie prawa zastrzeżone.</p>
-                </div>
-                <div class="col-md-6 text-md-end">
-                    <div class="social-links">
-                        <a href="https://www.facebook.com/speedyenglish123" target="_blank">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="https://www.instagram.com/speedy__english" target="_blank">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://www.youtube.com/@speedyenglish9640" target="_blank">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                    </div>
-                </div>
+            <hr>
+            <div class="text-muted d-flex justify-content-between align-items-center pt-3">
+                <p class="mb-0">Copyright © 2024 Speedyenglish</p><ul class="list-inline mb-0">
+    <li class="list-inline-item list-inline-item list-inline-item list-inline-item"><a href="https://www.facebook.com/speedyenglish123"><svg class="bi bi-facebook" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"></path>
+            </svg></a></li>
+    <li class="list-inline-item list-inline-item list-inline-item list-inline-item"><a href="https://www.instagram.com/speedy__english"><svg class="bi bi-instagram" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"></path>
+            </svg></a></li>
+    <li class="list-inline-item list-inline-item list-inline-item list-inline-item"><a href="https://www.youtube.com/@speedyenglish9640"><svg class="bi bi-youtube" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"></path>
+            </svg></a></li>
+</ul>
             </div>
         </div>
     </footer>
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- Custom JS -->
-    <script>
-        // Navbar background on scroll
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.style.boxShadow = '0 4px 15px rgba(0,0,0,0.15)';
-            } else {
-                navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-            }
-        });
-
-        // Add animation classes on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in-up');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in-up').forEach(el => {
-            observer.observe(el);
-        });
-    </script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/startup-modern.js"></script>
+    <script src="assets/js/jquery-3.4.1.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
 </body>
+
 </html>
