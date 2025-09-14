@@ -1,10 +1,21 @@
 // Expandable Text Functionality
 document.addEventListener('DOMContentLoaded', function() {
-    // Find all review texts and make long ones expandable
+    // Find all review texts and lecturer descriptions and make long ones expandable
     const reviewTexts = document.querySelectorAll('.review-text');
+    const lecturerTexts = document.querySelectorAll('.lecturer-text');
     const maxLength = 200; // Maximum characters before truncation
     
+    // Process review texts
     reviewTexts.forEach(function(textElement) {
+        processExpandableText(textElement, maxLength);
+    });
+    
+    // Process lecturer texts
+    lecturerTexts.forEach(function(textElement) {
+        processExpandableText(textElement, maxLength);
+    });
+    
+    function processExpandableText(textElement, maxLength) {
         const fullText = textElement.textContent.trim();
         
         // Only make expandable if text is longer than maxLength
@@ -25,6 +36,31 @@ document.addEventListener('DOMContentLoaded', function() {
             expandBtn.className = 'expand-btn';
             expandBtn.textContent = 'Czytaj więcej';
             expandBtn.setAttribute('aria-expanded', 'false');
+            expandBtn.style.cssText = `
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                border: none;
+                padding: 0.5rem 1.5rem;
+                border-radius: 25px;
+                font-weight: 500;
+                margin-top: 1rem;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            `;
+            
+            // Add hover effect
+            expandBtn.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-2px)';
+                this.style.boxShadow = '0 5px 15px rgba(102, 126, 234, 0.4)';
+            });
+            
+            expandBtn.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = 'none';
+            });
             
             // Replace original text with new structure
             textElement.innerHTML = '';
@@ -53,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         }
-    });
+    }
     
     // Add smooth scrolling when expanding text
     function smoothScrollToElement(element) {
