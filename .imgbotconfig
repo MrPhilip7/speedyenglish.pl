@@ -1,0 +1,10 @@
+{
+    "schedule": "weekly",
+    "ignoredFiles": [
+        "*.ico",
+        "*.svg"
+    ],
+    "aggressiveCompression": "true",
+    "compressWiki": "true",
+    "minKBReduced": 10
+}
