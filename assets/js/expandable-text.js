@@ -91,30 +91,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // Add smooth scrolling when expanding text
-    function smoothScrollToElement(element) {
-        const elementTop = element.offsetTop;
-        const elementHeight = element.offsetHeight;
-        const windowHeight = window.innerHeight;
-        const scrollTop = elementTop - (windowHeight / 2) + (elementHeight / 2);
-        
-        window.scrollTo({
-            top: scrollTop,
-            behavior: 'smooth'
-        });
-    }
-    
-    // Enhanced expand functionality with scroll
-    document.querySelectorAll('.expand-btn').forEach(function(btn) {
-        btn.addEventListener('click', function() {
-            setTimeout(() => {
-                const reviewCard = this.closest('.review-card') || this.closest('.row');
-                if (reviewCard && this.textContent === 'Zwiń') {
-                    smoothScrollToElement(reviewCard);
-                }
-            }, 300); // Wait for expansion animation
-        });
-    });
+    // Removed smooth scrolling functionality to prevent page scroll on expand
 });
 
 // Auto-expand functionality for hash links
