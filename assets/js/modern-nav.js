@@ -40,16 +40,61 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Mobile menu auto-close on link click
+    // Mobile menu functionality
     const navbarCollapse = document.querySelector('.navbar-collapse');
     const navbarToggler = document.querySelector('.navbar-toggler');
     
+    // Check if we're in mobile/tablet mode (< 1500px)
+    function isMobileMode() {
+        return window.innerWidth < 1500;
+    }
+    
+    // Handle responsive behavior
+    function handleResize() {
+        if (isMobileMode()) {
+            // Force mobile behavior
+            if (navbarCollapse) {
+                navbarCollapse.classList.remove('show');
+            }
+            if (navbarToggler) {
+                navbarToggler.setAttribute('aria-expanded', 'false');
+            }
+        }
+    }
+    
+    // Add resize listener
+    window.addEventListener('resize', handleResize);
+    
+    // Initial setup
+    handleResize();
+    
+    // Ensure Bootstrap 5 attributes are correct for mobile
+    if (navbarToggler && navbarCollapse && isMobileMode()) {
+        navbarToggler.setAttribute('data-bs-toggle', 'collapse');
+        navbarToggler.setAttribute('data-bs-target', '#navbarNav');
+        navbarToggler.setAttribute('aria-controls', 'navbarNav');
+    }
+    
+    // Mobile menu auto-close on link click (only in mobile mode)
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
-            if (navbarCollapse.classList.contains('show')) {
-                navbarToggler.click();
+            if (isMobileMode() && navbarCollapse && navbarCollapse.classList.contains('show')) {
+                navbarCollapse.classList.remove('show');
+                if (navbarToggler) {
+                    navbarToggler.setAttribute('aria-expanded', 'false');
+                }
             }
         });
+    });
+    
+    // Close menu when clicking outside (only in mobile mode)
+    document.addEventListener('click', function(e) {
+        if (isMobileMode() && !navbar.contains(e.target) && navbarCollapse && navbarCollapse.classList.contains('show')) {
+            navbarCollapse.classList.remove('show');
+            if (navbarToggler) {
+                navbarToggler.setAttribute('aria-expanded', 'false');
+            }
+        }
     });
     
     // Add loading animation
