@@ -154,14 +154,58 @@
     .reviews-single-column .review-card {
         flex-direction: column;
         text-align: center;
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
     }
     
     .reviews-single-column .review-image {
         margin: 0 auto 1.5rem;
+        width: 100px;
+        height: 100px;
     }
     
     .reviews-single-column .review-name {
         text-align: center;
+        font-size: 1.2rem;
+    }
+    
+    .review-text {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+    .reviews-section {
+        padding: 2rem 0;
+    }
+    
+    .reviews-single-column .review-card {
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .reviews-single-column .review-image {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 1rem;
+    }
+    
+    .reviews-single-column .review-name {
+        font-size: 1.1rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .review-text {
+        font-size: 0.85rem;
+        padding-left: 10px;
+    }
+    
+    .review-text::before {
+        font-size: 1.5rem;
+        left: -5px;
+        top: -3px;
     }
 }
 
