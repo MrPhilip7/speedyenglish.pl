@@ -72,64 +72,118 @@
 /* Contact Info Cards */
 .contact-info-card {
     background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-    border-radius: 16px;
-    padding: 24px;
-    margin-bottom: 20px;
+    border-radius: 20px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
     border: 1px solid #e9ecef;
+    padding: 30px 20px;
     transition: all 0.3s ease;
+    margin-bottom: 20px;
+    min-height: 200px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
 }
 
-/* Layout for contact info cards with icons aligned vertically */
-.col-md-6.col-lg-4.col-xl-4 {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.col-md-6.col-lg-4.col-xl-4 .contact-info-card {
-    display: flex;
-    align-items: center;
-    text-align: left;
-    margin-bottom: 15px;
-    padding: 20px;
-}
-
-.col-md-6.col-lg-4.col-xl-4 .contact-info-card .bs-icon {
-    margin-right: 16px;
-    margin-left: 0;
-    flex-shrink: 0;
-    align-self: flex-start;
+.contact-info-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, #0056b3 100%);
+    border-radius: 20px 20px 0 0;
 }
 
 .contact-info-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+    background: linear-gradient(135deg, #ffffff 0%, #f1f3f4 100%);
 }
 
 .contact-info-card .bs-icon {
     background: linear-gradient(135deg, var(--primary-color) 0%, #0056b3 100%);
     color: white;
-    width: 50px;
-    height: 50px;
-    border-radius: 12px;
+    width: 60px;
+    height: 60px;
+    border-radius: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 16px;
-    box-shadow: 0 4px 15px rgba(13, 110, 253, 0.3);
+    box-shadow: 0 6px 20px rgba(13, 110, 253, 0.3);
     transition: all 0.3s ease;
+    font-size: 1.4rem;
 }
 
 .contact-info-card:hover .bs-icon {
-    transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(13, 110, 253, 0.4);
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 8px 25px rgba(13, 110, 253, 0.4);
+}
+
+.contact-info-card h5 {
+    font-weight: 700;
+    color: #2c3e50;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .contact-info-card p {
-    margin-bottom: 4px;
+    margin-bottom: 6px;
     font-weight: 500;
     color: #495057;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.contact-info-card a {
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    padding: 2px 6px;
+}
+
+.contact-info-card a:hover {
+    background-color: rgba(13, 110, 253, 0.1);
+    color: var(--primary-color) !important;
+}
+
+/* Responsive Contact Cards */
+@media (max-width: 992px) {
+    .contact-info-card {
+        min-height: 180px;
+        padding: 25px 15px;
+    }
+    
+    .contact-info-card .bs-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+    
+    .contact-info-card h5 {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-info-card {
+        min-height: 160px;
+        padding: 20px 15px;
+    }
+    
+    .contact-info-card .bs-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+    }
+    
+    .contact-info-card h5 {
+        font-size: 1rem;
+    }
+    
+    .contact-info-card p {
+        font-size: 0.9rem;
+    }
 }
 
 /* Contact Header */
@@ -140,59 +194,6 @@
     margin-top: 76px;
     position: relative;
     overflow: hidden;
-}
-
-/* Spacing between contact info and image columns */
-.contact-section .row {
-    gap: 3rem;
-}
-
-/* Separate locations with spacing - desktop version */
-.contact-info-card:last-child p {
-    margin-bottom: 0.5rem !important;
-}
-
-.contact-info-card:last-child p:not(:last-child) {
-    border-bottom: 1px solid #e9ecef;
-    padding-bottom: 0.5rem;
-}
-
-@media (max-width: 768px) {
-    .contact-section .row {
-        gap: 2rem;
-    }
-    
-    /* Stack contact cards vertically on mobile */
-    .col-md-6.col-lg-4.col-xl-4 {
-        flex-direction: column;
-        gap: 10px;
-    }
-    
-    .col-md-6.col-lg-4.col-xl-4 .contact-info-card {
-        min-width: auto;
-        flex: none;
-        display: flex;
-        align-items: center;
-        text-align: left;
-        justify-content: flex-start;
-    }
-    
-    .col-md-6.col-lg-4.col-xl-4 .contact-info-card .bs-icon {
-        margin-right: 16px;
-        margin-left: 0;
-        flex-shrink: 0;
-        align-self: flex-start;
-    }
-    
-    /* Separate locations with spacing */
-    .contact-info-card:last-child p {
-        margin-bottom: 0.5rem !important;
-    }
-    
-    .contact-info-card:last-child p:not(:last-child) {
-        border-bottom: 1px solid #e9ecef;
-        padding-bottom: 0.5rem;
-    }
 }
 
 .contact-header::before {
