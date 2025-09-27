@@ -37,6 +37,15 @@
     <link rel="stylesheet" href="assets/css/Banner-Heading-Image-images.css">
     <link rel="stylesheet" href="assets/css/modern-nav.css?v=20250914_203000">
     <link rel="stylesheet" href="assets/css/modern-styles.min.css">
+    <style>
+        .flash-effect {
+            animation: slideUp 1s ease-out;
+        }
+        @keyframes slideUp {
+            0% { transform: translateY(50px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+    </style>
 </head>
 
 <body>
@@ -65,11 +74,11 @@
             </div>
         </div>
     </nav>
-    <header class="pt-5">
+    <header class="pt-2">
         <div class="container pt-4 pt-xl-5">
-            <div class="row pt-5">
+            <div class="row pt-2">
                 <div class="col-12 col-lg-10 mx-auto">
-                    <div class="text-center position-relative"><img class="img-fluid" src="assets/img/startowe.jpg" style="width: 800px;"></div>
+                    <div class="text-center position-relative"><img class="img-fluid flash-effect" src="assets/img/startowe.jpg" style="width: 800px;"></div>
                 </div>
                 <div class="col-md-8 text-center text-md-start mx-auto">
                     <div class="text-center">
