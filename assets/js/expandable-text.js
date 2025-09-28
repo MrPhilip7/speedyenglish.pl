@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
             expandBtn.textContent = 'Czytaj więcej';
             expandBtn.setAttribute('aria-expanded', 'false');
             expandBtn.style.cssText = `
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
                 color: white;
                 border: none;
                 padding: 0.5rem 1.5rem;
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Add hover effect
             expandBtn.addEventListener('mouseenter', function() {
                 this.style.transform = 'translateY(-2px)';
-                this.style.boxShadow = '0 5px 15px rgba(102, 126, 234, 0.4)';
+                this.style.boxShadow = '0 5px 15px rgba(220, 38, 38, 0.4)';
             });
             
             expandBtn.addEventListener('mouseleave', function() {
