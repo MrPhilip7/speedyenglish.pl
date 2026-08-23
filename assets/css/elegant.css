@@ -1,0 +1,442 @@
+/* =========================================================
+   Speedy English – Classic Elegant Theme
+   White background · deep navy · refined amber accents
+   Load AFTER modern-nav.css and modern-styles(.min).css
+   ========================================================= */
+
+:root {
+    --navy: #12275a;
+    --blue: #2563eb;
+    --blue-dark: #1d4ed8;
+    --amber: #c98a1b;
+    --amber-soft: #e3b04b;
+    --ink: #1a2233;
+    --muted: #6b7280;
+    --hairline: #e7ebf2;
+    --radius: 12px;
+}
+
+body {
+    background: #ffffff;
+    color: var(--ink);
+    font-family: 'Raleway', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+section,
+footer {
+    background: #ffffff !important;
+}
+
+/* ===== Typographic helpers ===== */
+.kicker {
+    display: inline-block;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--amber);
+}
+
+.divider {
+    width: 56px;
+    height: 2px;
+    background: var(--amber);
+    margin: 1.4rem auto;
+    border: none;
+    opacity: 1;
+}
+.divider-start { margin-left: 0; }
+
+.section-head {
+    text-align: center;
+    margin-bottom: 3.25rem;
+}
+.section-head h1,
+.section-head h2 {
+    font-size: clamp(1.9rem, 3.5vw, 2.6rem);
+    font-weight: 800;
+    color: var(--navy);
+    margin: 0.75rem 0 0;
+}
+.section-head p {
+    max-width: 620px;
+    margin: 1rem auto 0;
+    color: var(--muted);
+}
+
+/* Elegant marker highlight (replaces yellow marker) */
+.highlight {
+    background: linear-gradient(transparent 68%, rgba(227, 176, 75, 0.45) 68%, rgba(227, 176, 75, 0.45) 92%, transparent 92%) !important;
+    font-weight: 800;
+}
+
+/* ===== Buttons ===== */
+.btn-navy {
+    background: var(--navy);
+    color: #fff;
+    border: 1px solid var(--navy);
+    border-radius: 8px;
+    padding: 0.8rem 2rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.25s ease;
+}
+.btn-navy:hover {
+    background: var(--blue-dark);
+    border-color: var(--blue-dark);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px -10px rgba(29, 78, 216, 0.5);
+}
+.btn-outline-navy {
+    background: transparent;
+    color: var(--navy);
+    border: 1px solid #c9d2e3;
+    border-radius: 8px;
+    padding: 0.8rem 2rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.25s ease;
+}
+.btn-outline-navy:hover {
+    border-color: var(--navy);
+    color: var(--navy);
+    transform: translateY(-2px);
+}
+
+/* ===== Hero (index) ===== */
+.hero {
+    padding: 3rem 0 4rem;
+    text-align: center;
+}
+.hero h1 {
+    font-size: clamp(2.4rem, 5.5vw, 3.8rem);
+    font-weight: 800;
+    letter-spacing: -0.015em;
+    color: var(--navy);
+    margin-bottom: 0;
+}
+.hero .lead {
+    font-size: 1.12rem;
+    font-weight: 400;
+    color: var(--muted);
+    max-width: 700px;
+    margin: 0 auto 2.25rem;
+    line-height: 1.75;
+}
+.hero-actions {
+    display: flex;
+    gap: 0.9rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 3.5rem;
+}
+.hero-figure {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 10px;
+    border: 1px solid var(--hairline);
+    border-radius: calc(var(--radius) + 6px);
+    box-shadow: 0 30px 60px -35px rgba(18, 39, 90, 0.35);
+}
+.hero-figure img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius);
+    display: block;
+}
+
+/* Load animation */
+.flash-effect { animation: rise 0.8s ease-out both; }
+.delay-1 { animation-delay: 0.12s; }
+.delay-2 { animation-delay: 0.24s; }
+@keyframes rise {
+    0% { transform: translateY(28px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+/* ===== Video frames ===== */
+.video-frame {
+    border: 1px solid var(--hairline);
+    border-radius: calc(var(--radius) + 4px);
+    padding: 8px;
+    box-shadow: 0 24px 50px -30px rgba(18, 39, 90, 0.3);
+}
+.video-frame .video-container,
+.video-frame .ratio {
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+.video-container iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    border: 0;
+}
+
+/* ===== Lesson cards (index) ===== */
+.lesson-grid .card {
+    height: 100%;
+    background: #fff;
+    border: 1px solid var(--hairline);
+    border-radius: var(--radius);
+    box-shadow: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+.lesson-grid .card:hover {
+    border-color: #cdd8ee;
+    box-shadow: 0 22px 40px -26px rgba(18, 39, 90, 0.35);
+    transform: translateY(-5px);
+}
+.lesson-grid .card img {
+    width: 180px;
+    height: 172px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.lesson-num {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.24em;
+    color: #b6bfd2;
+    margin-bottom: 0.5rem;
+}
+.lesson-grid h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 0.4rem;
+}
+.lesson-grid .card p {
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin-bottom: 1rem;
+}
+.lesson-link {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--blue-dark);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 2px;
+    transition: border-color 0.2s ease, color 0.2s ease;
+}
+.lesson-link:hover {
+    color: var(--navy);
+    border-bottom-color: var(--navy);
+}
+.lesson-link svg { margin-left: 0.35rem; }
+
+/* ===== Content panel (subpages) ===== */
+.panel {
+    background: #fff;
+    border: 1px solid var(--hairline);
+    border-radius: 16px;
+    box-shadow: 0 24px 50px -38px rgba(18, 39, 90, 0.35);
+    padding: 2.5rem 2rem;
+}
+.panel > .panel-title {
+    font-weight: 800;
+    color: var(--navy);
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+/* Content entry block (image + heading + description) */
+.entry {
+    padding: 2.5rem 0.5rem;
+}
+.entry + .entry {
+    border-top: 1px solid var(--hairline);
+}
+.entry img.center {
+    border-radius: 10px;
+    object-fit: cover;
+}
+.entry h4 {
+    font-weight: 700;
+    color: var(--navy);
+    text-align: center;
+    margin: 1.1rem 0 0.6rem;
+}
+.entry p {
+    color: var(--muted);
+    line-height: 1.75;
+    max-width: 860px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.entry-sep {
+    border: none;
+    border-top: 1px solid var(--hairline);
+    margin: 0;
+    opacity: 1;
+}
+
+/* Circular portraits (lektorzy) */
+.portrait {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 50% !important;
+    border: 1px solid var(--hairline);
+    box-shadow: 0 16px 32px -20px rgba(18, 39, 90, 0.4);
+}
+
+/* ===== Expandable text button ===== */
+.expand-btn {
+    background: var(--navy) !important;
+    color: #fff !important;
+    border: none;
+    padding: 0.55rem 1.6rem;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    margin-top: 1rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.expand-btn:hover {
+    background: var(--blue-dark) !important;
+    box-shadow: 0 10px 20px -8px rgba(29, 78, 216, 0.45) !important;
+}
+
+/* ===== Reviews (onas) ===== */
+.reviews-section h2 {
+    color: var(--navy) !important;
+    font-weight: 800;
+}
+.reviews-section h3 {
+    color: var(--muted);
+    font-size: 1.1rem;
+    font-weight: 400;
+    text-align: center;
+}
+.review-card {
+    background: #fff !important;
+    border: 1px solid var(--hairline) !important;
+    border-radius: var(--radius) !important;
+    box-shadow: none !important;
+    padding: 1.75rem !important;
+    margin-bottom: 1.25rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+.review-card:hover {
+    border-color: #cdd8ee !important;
+    box-shadow: 0 22px 40px -26px rgba(18, 39, 90, 0.35) !important;
+    transform: translateY(-3px);
+}
+.review-image {
+    width: 72px !important;
+    height: 72px !important;
+    object-fit: cover;
+    border-radius: 50% !important;
+    border: 1px solid var(--hairline);
+}
+.review-name,
+.reviews-single-column .review-name {
+    color: var(--navy) !important;
+    font-weight: 700;
+}
+.review-text {
+    color: var(--muted);
+    line-height: 1.75;
+}
+
+/* ===== Contact page ===== */
+.contact-section {
+    background: #ffffff !important;
+}
+.contact-section .hero-title {
+    color: var(--navy) !important;
+}
+.contact-section .hero-title .highlight::after {
+    background: rgba(227, 176, 75, 0.45) !important;
+}
+.contact-section .hero-subtitle {
+    color: var(--muted);
+}
+.contact-icon-small {
+    color: var(--amber) !important;
+}
+.contact-item-inline {
+    color: var(--ink);
+}
+
+/* ===== CTA panel ===== */
+.cta-panel {
+    background: var(--navy);
+    border-radius: 16px;
+    color: #fff;
+}
+.cta-panel .kicker { color: var(--amber-soft); }
+.cta-panel h2 {
+    color: #fff;
+    font-weight: 800;
+    margin: 0.5rem 0 0.25rem;
+}
+.cta-panel p { color: rgba(255, 255, 255, 0.72); }
+.cta-panel .btn-light {
+    border-radius: 8px;
+    font-weight: 700;
+    color: var(--navy);
+    transition: all 0.25s ease;
+}
+.cta-panel .btn-light:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.4);
+}
+
+/* ===== Feature split rows ===== */
+.feature-title {
+    font-weight: 800;
+    color: var(--navy);
+}
+.feature-img {
+    border-radius: var(--radius);
+    border: 1px solid var(--hairline);
+}
+
+/* ===== Footer ===== */
+footer {
+    border-top: 1px solid var(--hairline);
+}
+footer .footer-link {
+    font-weight: 600;
+    color: var(--ink);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+footer .footer-link:hover {
+    color: var(--blue-dark);
+}
+footer hr {
+    border-color: var(--hairline);
+    opacity: 1;
+}
+footer .list-inline-item a {
+    color: #8a94a8;
+    transition: color 0.2s ease;
+}
+footer .list-inline-item a:hover {
+    color: var(--navy);
+}
+
+/* ===== Misc ===== */
+a { text-decoration: none; }
+
+@media (max-width: 767.98px) {
+    .panel { padding: 1.75rem 1.25rem; }
+    .entry { padding: 2rem 0.25rem; }
+}
