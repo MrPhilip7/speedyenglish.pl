@@ -374,6 +374,69 @@ footer {
     color: var(--ink);
 }
 
+/* Contact channel cards */
+.contact-card {
+    background: #fff;
+    border: 1px solid var(--hairline);
+    border-radius: var(--radius);
+    padding: 2.25rem 1.75rem;
+    height: 100%;
+    transition: all 0.25s ease;
+}
+.contact-card:hover {
+    border-color: #cdd8ee;
+    box-shadow: 0 22px 40px -26px rgba(18, 39, 90, 0.35);
+    transform: translateY(-5px);
+}
+.contact-card-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: rgba(227, 176, 75, 0.15);
+    color: var(--amber);
+    font-size: 1.15rem;
+    margin-bottom: 1.1rem;
+}
+.contact-card h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 0.6rem;
+}
+.contact-card p,
+.contact-card a {
+    display: block;
+    color: var(--muted);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 0.15rem;
+}
+.contact-card a:hover {
+    color: var(--blue-dark);
+}
+
+/* Featured email */
+.email-big {
+    display: inline-block;
+    font-size: clamp(1rem, 2.6vw, 1.75rem);
+    font-weight: 800;
+    color: var(--navy);
+    white-space: nowrap;
+    transition: color 0.2s ease;
+}
+.email-big:hover {
+    color: var(--blue-dark);
+}
+@media (max-width: 575.98px) {
+    .email-big {
+        white-space: normal;
+        word-break: break-word;
+    }
+}
+
 /* ===== CTA panel ===== */
 .cta-panel {
     background: var(--navy);
